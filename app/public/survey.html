@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>FriendFinder</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <hr>
+    <h3>Survey Questions</h3>
+    <hr>
+    <h4>About You</h4>
+    <div class="form-group">
+        <label for="name">Name (required)</label>
+        <input class="form-control" type="text" id="name">
+        <label for="image">Link to Photo Image (Required)</label>
+        <input class="form-control" type="text" id="image">
+    </div>
+    <hr>
+    <h4>Questions</h4>
+    <p>1. Your mind is always buzzing with unexplored ideas and plans.</p>
+    <select class="selectpicker" id="q1">
+        <option value="" disabled selected>Select an Option</option>
+        <option value="1">1 - Strongly Disagree</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 - Strongly Agree</option>
+    </select>
+    <hr>
+    <p>2. Generally speaking, you rely more on your experience than your imagination.</p>
+    <select class="selectpicker" id="q2">
+        <option value="" disabled selected>Select an Option</option>
+        <option value="1">1 - Strongly Disagree</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 - Strongly Agree</option>
+    </select>
+    <hr>
+    <p>3. You find it easy to stay relaxed and focused even when there is some pressure.</p>
+    <select class="selectpicker" id="q3">
+        <option value="" disabled selected>Select an Option</option>
+        <option value="1">1 - Strongly Disagree</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 - Strongly Agree</option>
+    </select>
+    <hr>
+    <p>4. You rarely do something just out of sheer curiosity.</p>
+    <select class="selectpicker" id="q4">
+        <option value="" disabled selected>Select an Option</option>
+        <option value="1">1 - Strongly Disagree</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 - Strongly Agree</option>
+    </select>
+    <hr>
+    <p>5. People can rarely upset you.</p>
+    <select class="selectpicker" id="q5">
+        <option value="" disabled selected>Select an Option</option>
+        <option value="1">1 - Strongly Disagree</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 - Strongly Agree</option>
+    </select>
+    <hr>
+    <p>6. It is often difficult for you to relate to other people’s feelings.</p>
+    <select class="selectpicker" id="q6">
+        <option value="" disabled selected>Select an Option</option>
+        <option value="1">1 - Strongly Disagree</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 - Strongly Agree</option>
+    </select>
+    <hr>
+    <p>7. In a discussion, truth should be more important than people’s sensitivities.</p>
+    <select class="selectpicker" id="q7">
+        <option value="" disabled selected>Select an Option</option>
+        <option value="1">1 - Strongly Disagree</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 - Strongly Agree</option>
+    </select>
+    <hr>
+    <p>8. You rarely get carried away by fantasies and ideas.</p>
+    <select class="selectpicker" id="q8">
+        <option value="" disabled selected>Select an Option</option>
+        <option value="1">1 - Strongly Disagree</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 - Strongly Agree</option>
+    </select>
+    <hr>
+    <p>9. You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</p>
+    <select class="selectpicker" id="q9">
+        <option value="" disabled selected>Select an Option</option>
+        <option value="1">1 - Strongly Disagree</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 - Strongly Agree</option>
+    </select>
+    <hr>
+    <p>10. You feel more energetic after spending time with a group of people.</p>
+    <select class="selectpicker" id="q10">
+        <option value="" disabled selected>Select an Option</option>
+        <option value="1">1 - Strongly Disagree</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 - Strongly Agree</option>
+    </select>
+    <hr>
+    <a href="/survey"><button class="btn btn-danger btn-lg" id="submit"><span class="far fa-check-circle"></span> Submit</button></a>
+    <hr>
+    <a href="/api/friendList">API Friends List</a>
+    <hr>
+  </div>
+
+  <div class="modal" tabindex="-1" role="dialog" id="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">You are most compatible with...</h5>
+        </div>
+        <div class="modal-body">
+            <img src="" alt="">
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+    </div>
+  </div>
+
+</body>
+
+<script type="text/javascript">
+    $("#submit").on("click", function (event) {
+        event.preventDefault();
+
+        var newFriend = {
+            name: $("#name").val().trim(),
+            image: $("#image").val().trim(),
+            scores: [
+                $("#q1").val().trim(),
+                $("#q2").val().trim(),
+                $("#q3").val().trim(),
+                $("#q4").val().trim(),
+                $("#q5").val().trim(),
+                $("#q6").val().trim(),
+                $("#q7").val().trim(),
+                $("#q8").val().trim(),
+                $("#q9").val().trim(),
+                $("#q10").val().trim(),
+            ]
+        }
+
+        console.log(newFriend)
+
+        $.post("/api/friendList", newFriend, function(data) {
+            $("#myModal").modal("show");
+        });
+    });
+
+</script>
+</html>
+
