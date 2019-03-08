@@ -126,7 +126,7 @@
         <option value="5">5 - Strongly Agree</option>
     </select>
     <hr>
-    <a href="/survey"><button class="btn btn-danger btn-lg" id="submit"><span class="far fa-check-circle"></span> Submit</button></a>
+    <button class="btn btn-danger btn-lg" data-target="#myModal" id="submit"><span class="far fa-check-circle"></span> Submit</button>
     <hr>
     <a href="/api/friendList">API Friends List</a>
     <hr>
@@ -139,7 +139,8 @@
             <h5 class="modal-title">You are most compatible with...</h5>
         </div>
         <div class="modal-body">
-            <img src="" alt="">
+            <h2 id="matchName"></h2>
+            <img id="matchImage" src="#" alt="" height="300px" width="100%">
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -174,7 +175,23 @@
         console.log(newFriend)
 
         $.post("/api/friendList", newFriend, function(data) {
+            $("#matchName").text(data.name)
+            $("#matchImage").attr("src", data.photo);
             $("#myModal").modal("show");
+
+            // clear inputs
+            $("#name").val("");
+            $("#image").val("");
+            $("#q1").val("");
+            $("#q2").val("");
+            $("#q3").val("");
+            $("#q4").val("");
+            $("#q5").val("");
+            $("#q6").val("");
+            $("#q7").val("");
+            $("#q8").val("");
+            $("#q9").val("");
+            $("#q10").val("");
         });
     });
 
