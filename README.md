@@ -5,7 +5,7 @@ Full stack, compatibility-based, survey application
 - https://peaceful-reef-52840.herokuapp.com/
 
 ### Usage
-![userEx](/public/images/friendfinder.PNG?raw=true "friend finder home page")
+![userEx](public/images/friendfinder.PNG?raw=true "friend finder home page")
 
 ### Technologies Used
 - Node.js
